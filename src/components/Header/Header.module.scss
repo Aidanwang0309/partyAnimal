@@ -1,0 +1,47 @@
+@import "../../utils/style.scss";
+
+.header {
+    height: clamp(5vw, 10px, 8vw);
+    position: fixed;
+    width: 100%;
+    height: clamp(6vw, 10px, 8vw);
+    z-index: 9;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "logo . . nav nav nav ";
+    display: grid;
+    color: $textPrimary;
+
+    &Logo {
+        background-color: $backgroundBlack;
+        grid-area: logo;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: clamp(1rem, 1.2rem,1.5rem);
+        font-weight: 900;
+        font-style: italic;
+    }
+
+    ul {
+        grid-area: nav;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        height:100%;
+        li {
+            margin-right: 6vw;
+            font-family: chinesemsyh;
+            list-style-type: none;
+            font-weight:700;
+            font-size: 1.1rem;
+            margin-bottom: 0;
+            a{
+                text-decoration: none;
+                color: $textPrimary;
+                cursor: pointer;
+            }
+        }
+    }
+}

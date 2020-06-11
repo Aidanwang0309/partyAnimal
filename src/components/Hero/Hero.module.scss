@@ -1,0 +1,42 @@
+@import "../../utils/style.scss";
+
+.hero {
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+    display: flex;
+
+    &Background {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+    &Content {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: 'title title title . . ';
+        display: grid;
+        height: 100%;
+        width: 100%;
+        z-index: 99;
+        background-image: repeating-linear-gradient(#ccc 0 0px, transparent 0px 100%),
+        repeating-linear-gradient(90deg,#cccccc1f 0 1px, transparent 1px 100%);
+        background-size: 16.7% 100px;
+        h1{
+           font-family: 'Work Sans';
+           color: $textPrimary;
+        }
+
+        .title{
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position:right;
+            grid-area: title;
+            height:11.7vw;
+            position:relative;
+            top:30%;
+        }
+    }
+}

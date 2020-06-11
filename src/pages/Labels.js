@@ -6,15 +6,13 @@ import { Hero } from "../components"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Wrapper>
-    <Hero>
+const Labels = () => (
 
-    </Hero>
-  </Wrapper>
+
+
+
 )
-
-export default IndexPage
+export default Labels
 
 {/* <Wrapper>
     <SEO title="Home" />
