@@ -1,0 +1,16 @@
+.labelListContainer {
+    // background-image: repeating-linear-gradient(#ccc 0 0px, transparent 0px 100%),
+    //     repeating-linear-gradient(90deg, #cccccc1f 0 1px, transparent 1px 100%);
+    // background-size: 16.7% 100px;
+
+    &Header {
+        height:50vh;
+        width:100%;
+    }
+
+    &Content {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: "title content content content content content ";
+    }
+}

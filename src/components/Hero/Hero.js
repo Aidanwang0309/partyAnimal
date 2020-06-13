@@ -6,21 +6,17 @@ import { useStaticQuery, graphql } from "gatsby"
 import HEADERTITLE from "../../images/headerTitle.svg"
 
 
-
 export const Hero = (Props) => {
     const data = useStaticQuery(graphql`
-    query {
-        allContentfulAsset(filter: {title: {eq: "hero"}}){
-            edges {
-                node {
-                    title
-                    file {
-                        url
-                    }
-                }
-            }
+    query getHero {
+        contentfulAsset(title: {eq:"hero"}) {
+          id
+          title
+          file {
+            url
+          }
         }
-    }
+      }
   `)
 
     return (
@@ -28,10 +24,8 @@ export const Hero = (Props) => {
             <div className={css.heroContent}>
                 <div className={css.title} style={{ 'backgroundImage': `url(${HEADERTITLE})` }} />
             </div>
-            {data.allContentfulAsset.edges.map(edge =>
-                <div className={css.heroBackground} style={{ 'backgroundImage': `url(${edge.node.file.url})` }}>
-                </div>
-            )}
+            <div className={css.heroBackground} style={{ 'backgroundImage': `url(${data.contentfulAsset.file.url})` }} />
+
         </div>
     )
 }

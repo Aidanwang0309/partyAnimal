@@ -28,14 +28,14 @@ export const Header = ({ siteTitle }) => (
       </li>
       <li>
         <Link
-          to="/"
+          to="/labels/"
         >
           厂牌
         </Link>
       </li>
       <li>
         <Link
-          to="/"
+          to="/page-2/"
         >
           音乐人
         </Link>

@@ -1,0 +1,36 @@
+@import "../../utils/style.scss";
+
+.banner {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "title image image image image image ";
+    height: 100%;
+    &Image {
+        grid-area: image;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    &Title {
+        grid-area: title;
+        justify-self: right;
+        align-self: flex-end;
+        width: max-content;
+        transform: translateX(30%);
+        height:10vw;
+        h1 {
+            font-family: YouSheBiaoTiHei;
+            font-size: 10vw;
+            color: $textPrimary;
+        }
+        &Bg {
+            background-color: $backgroundDarkerBlack;
+            width: 200%;
+            height: 50%;
+            position: absolute;
+            top:50%;
+            transform: translateX(-30%);
+            z-index: -1;
+        }
+    }
+}

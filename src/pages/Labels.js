@@ -1,26 +1,35 @@
 import React from "react"
 import { Link } from "gatsby"
-
-import Wrapper from "../components/layout"
-import { Hero } from "../components"
-import Image from "../components/image"
+import { useStaticQuery, graphql } from "gatsby"
 import SEO from "../components/seo"
+import { motion } from "framer-motion"
+import { LabelList, Layout, Banner } from "../components"
+import css from "./pages.module.scss"
 
-const Labels = () => (
 
+const Labels = () => {
+  const data = useStaticQuery(graphql`
+  query getLabelBanner {
+      contentfulAsset(title: {eq:"labelBanner"}) {
+        id
+        title
+        file {
+          url
+        }
+      }
+    }
+`)
 
-
-
-)
-export default Labels
-
-{/* <Wrapper>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+  return <Layout>
+    <div className={css.labelListContainer}>
+      <div className={css.labelListContainerHeader}>
+        <Banner title="厂牌" image={data.contentfulAsset.file.url} />
+      </div>
+      <div className={css.labelListContainerContent}>
+        <LabelList />
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-  </Wrapper> */}
+  </Layout>
+}
+
+export default Labels

@@ -1,18 +1,19 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Wrapper from "../components/layout"
-import { Hero } from "../components"
+import { Hero, Layout } from "../components"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Wrapper>
+const IndexPage = () => {
+
+
+  return (<Layout>
     <Hero>
 
     </Hero>
-  </Wrapper>
-)
+  </Layout>)
+}
 
 export default IndexPage
 

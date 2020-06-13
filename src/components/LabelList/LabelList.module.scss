@@ -1,0 +1,8 @@
+.labelList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-area: content;
+    column-gap: 3vw;
+    margin-top: 5vw;
+    padding-right: 2vw;
+}
